@@ -25,14 +25,15 @@ inputHandler ("fields":[]) = do
     putStr "Available filters:\n"
     putStr . unlines $ supportedFields
     return ()
-inputHandler input = do
-    let inputFilters = parseFilters input
+inputHandler ("s":input) = inputHandler ("suggestion":input)
+inputHandler ("suggestion":inputFilters) = do
+    let filters = parseFilters inputFilters
     parseResult <- parseFromFile p_movies movieFile
-    randomGen <- getStdGen
+    randomGen   <- getStdGen
     case parseResult of
-        Left error -> print $ parseErrorPretty error
+        Left error   -> print $ parseErrorPretty error
         Right movies -> print . fst $
-            makeSuggestion inputFilters movies randomGen
+            makeSuggestion filters movies randomGen
 
 -- Helper functions/values
 -- -----------------------

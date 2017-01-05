@@ -37,7 +37,8 @@ chooseRandom movies randomGen =
         (randomIndex, randomGen') = randomR (0, length movies - 1) randomGen
 
 filterMovies :: Filters -> Movies -> Movies
-filterMovies filters = P.filter (movieMatchesAny filters)
+filterMovies [] movies = movies
+filterMovies filters movies = P.filter (movieMatchesAny filters) movies
 
 movieMatchesAny :: Filters -> Movie -> Bool
 movieMatchesAny filters (Movie _ metadata) =
