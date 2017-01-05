@@ -1,0 +1,4 @@
+-   String -> Text
+-   tests
+-   State Monad (for uses involving RandomGen)
+-   repl-ish setup
