@@ -1,5 +1,5 @@
-Suggestion (aka 'Date Script')
-==============================
+Suggestion
+==========
 
 A Haskell program whose ultimate goal is to choose a movie to watch.
 
