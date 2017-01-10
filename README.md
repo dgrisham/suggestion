@@ -15,6 +15,8 @@ Implemented functionality:
 2.  Get a random movie suggestion with optional filters on metadata. Examples:
     
     ```sh
+    # get all available filterable fields
+    suggestion-exe fields
     # random movie from all in file
     suggestion-exe suggestion
     # random Jim Carrey comedy OR action movie
